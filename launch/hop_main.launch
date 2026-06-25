@@ -1,0 +1,32 @@
+<launch>
+
+    <!-- Global frame parameter -->
+    <param name="~frame_id" type="string" value="world_ned" />
+    
+    <!-- Launch the TurtleBot simulator along with stonefish -->
+    <include file="$(find turtlebot_simulation)/launch/turtlebot_hol_circuit2_aruco.launch" />
+
+    <!-- Run dead reckoning node (Python script) -->
+    <!-- <node pkg="aruco_slam_HOP" type="deadReckoning_node.py" name="dead_reckoning_node" output="screen">
+        <param name="use_sim_time" value="true" />
+    </node> -->
+
+    <node pkg="aruco_slam_HOP" type="aruco_detector_node.py" name="aruco_detector_node" output="screen">
+        <param name="use_sim_time" value="true" />
+    </node>
+
+    <node pkg="aruco_slam_HOP" type="aruco_robot_localization_node.py" name="aruco_robot_localization_node" output="screen">
+        <param name="use_sim_time" value="true" />
+    </node>
+
+    <node pkg="aruco_slam_HOP" type="compare_aruco_odom.py" name="compare_aruco_odom_node" output="screen">
+        <param name="use_sim_time" value="true" />
+    </node>
+
+    <!-- <arg name="robot_name" default="turtlebot"/> -->
+
+    <!-- Load robot description -->
+        <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find turtlebot_description)/urdf/turtlebot.urdf.xacro'" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> -->
+
+</launch>
