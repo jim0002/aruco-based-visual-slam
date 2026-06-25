@@ -12,6 +12,28 @@ The project was developed and evaluated on both a simulated environment and a re
 
 ---
 
+## Project Demonstration
+
+### Simulation Environment
+
+![Stonefish Simulation Environment](images/stonefish_simulation_environment.png)
+
+### RViz Localization View
+
+![RViz Localization View](images/rviz_localization_view.png)
+
+### Dynamic Marker Graph
+
+![Dynamic Marker Graph](images/dynamic_marker_graph.png)
+
+### Simulation Pose Comparison
+
+![Pose Comparison Simulation](images/pose_comparison_simulation.png)
+
+### Real-World Robot Setup
+
+![Real World Robot Setup](images/real_world_robot_setup.jpg)
+
 ## Key Features
 
 * Real-time ArUco marker detection using OpenCV
